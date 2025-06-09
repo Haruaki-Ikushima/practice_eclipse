@@ -1,0 +1,156 @@
+html
+
+ <footer class="center">
+     classの使い方
+
+<link rel="stylesheet" href="css/style.css"> 
+   外部のCSSファイルを読み込むタグ
+
+&lt;p&gt;
+   <p>
+-----------------------------------------------------------------------
+<h1><a href="index.html" class="logo">MyApp</a></h1>
+   前半でページ、後半でクラスも可能
+-----------------------------------------------------------------------
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+　　<head>内で書く、画面幅をデバイスの幅に合わせ、初期の拡大率を1に設定
+-----------------------------------------------------------------------
+
+<style>
+        body {
+            padding: 20px;
+        }
+        .btn {
+            background: linear-gradient(　　
+                45deg,
+                #6a11cb,
+                #2575fc
+            );　　　　　　　　　　　　斜め45度方向に紫色(#6a11cb)から青色(#2575fc)へのグラデーション背景
+            padding: 15px 30px;
+            color: #fff;
+            font-size: 16px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, .25);　ボタンの下に薄い影を付けて浮き上がって見える効果
+            transition: transform .2s;　transform（変形）プロパティの変化を0.2秒かけて滑らかにアニメーションする設定
+        }
+        .btn:hover {
+            transform: scale(1.05);　ボタンにマウスカーソルを乗せたとき（ホバー状態）に、ボタンの大きさを1.05倍に少し拡大
+        }
+    </style>
+　　　html内でstyleを使うとCSS構文が使える
+---------------------------------------------------------------------
+<form action="" method="post">
+　　ユーザーが入力したデータを送信するための要素。
+
+<label for="myname">お名前<span class="required">必須</span></label>
+<input type="text" id="myname" name="myname" placeholder="例：山田太郎" required>
+     labelを押すと、入力欄にカーソルを向かわせる、
+　　 inputでtextを入力、最後に要求を入れることで、空白でないかチェック
+
+<label for="email">メールアドレス<span class="required">必須</span></label>
+<input type="email" id="email" name="email" placeholder="例：example@example.com" required>
+　    emailの形式で入力しないとはじかれる
+　　　ほかにもinput形式には、radio（複数から1つ）やcheckbox、selet,passwaordなどがある。
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+css
+ @import url('normalize.css');
+　外部のCSSファイル「normalize.css」を読み込んで
+
+header, main, footer { padding: 20px 30px; } 
+   <header>, <main>, <footer>の3つの要素に対して内側の余白（パディング）を上下20px、左右30pxずつ
+
+.card h3 { font-size: 1.2em; }
+   cardクラス内の<h3>タグのフォントサイズを親の1.2倍に設定、htmlでは<div class="card">、ただしhtml記述がない場合があることも（単なるグルーピング)
+---------------------------------------------------------------------------
+a:not(.logo):hover
+   <a>タグのうち、クラスが「logo」でないものに対して、ホバー（マウスオーバー）時のスタイルを指定
+
+.menu {
+    display: flex;
+    gap: 10px;
+}
+　　横並びのフレックスボックスレイアウトに、子要素の間隔（ギャップ）を10ピクセル空け、<ul class="menu"> に対応
+
+nav {
+    display: flex;　　　　　　　　　　　　//子要素を横並び
+    align-items: center;　　　　　　　　　//縦方向を中央揃え
+    justify-content: space-between;　　　　//2つの要素に最大の空白を
+    padding: 10px;
+}
+　　navはさすがかも、h1 と ul.menu が上下の中央で揃う、
+-------------------------------------------------------------------------------
+.container {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+}
+    CSS Gridレイアウトを適用,列の幅を2つ指定し、左の列が固定幅240px、右の列が残りの幅（1fr）を占める
+
+@media (max-width: 1200px) {
+    main {
+        grid-template-columns: repeat(3, 1fr);
+    }    
+}
+　　画面幅が1200px以下の場合、mainのカラム数を3列に減らします。
+
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+    .container {
+        grid-template-columns: 1fr;
+    }
+    aside {
+        display: none;
+    }
+}
+　　画面幅が768px以下では、カラム数を1列にし、縦並び、サイドバー非表示、スマホ用
+
+main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+　　CSS Gridを適用し、4列の均等カラムレイアウト
+
+
+:root {
+    background-color: #f5f5f5;
+}
+　　強い権限がある
+
+
+
+button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;　　　カーソルを変更
+    font-size: 1rem;
+    width: 100%;
+    transition: background-color .3s;
+}
+
+
+
+背景色　background-color
+テキストの位置　text-align
+外側の余白　margin
+内側の余白　padding
+フォント　font-size
+色　color
+角を丸く　border-radius
+テキストに下線など　text-decoration
+文字の太さ　font-weight
+マウスカーソルがリンク上にある状態　hover
+サイドバーとしてナビゲーションメニュー　<aside>
+デフォルトのマーカー（黒丸など）を消去　list-style: none;
+特定のテキストや要素の一部分を囲んで意味づけや装飾　span
+
+
+

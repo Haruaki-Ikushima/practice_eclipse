@@ -1,0 +1,51 @@
+
+/* CSSをリセット(同じ階層に) */
+/* @import url('normalize.css'); */
+
+p {
+    color: blue;
+}
+h1 {
+    text-align: center;
+    font-size: 1.5em;
+}
+header {
+    background-color: white;
+    /* 上下、左右 */
+    /* padding: 20px 30px; */
+    /* padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px; */
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: hsl(0, 19%, 50%);
+}
+
+header,main,footer{
+    padding: 20px 30px;
+}
+
+/* footer{
+    padding: 20px 30px;
+} */
+
+/* div.card */
+.card{
+    background-color: #fff;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.center{
+    text-align: center;
+}
+
+/* 子孫セレクタ詳細度が高い */
+.card h3{
+    font-size: 1.2em;
+}
